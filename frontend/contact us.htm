@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: #F7F9FB;
+      color: #264653;
+    }
+
+    header {
+      background: #2A9D8F;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #E9C46A;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 2rem;
+      background: #fff;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-header h2 {
+      color: #2A9D8F;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .contact-header p {
+      color: #264653;
+      font-size: 1rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    /* Contact Details */
+    .contact-details {
+      flex: 1;
+      min-width: 300px;
+      padding: 1.5rem;
+      background: #F7F9FB;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-details h3 {
+      margin-bottom: 1rem;
+      color: #264653;
+      font-weight: 600;
+    }
+
+    .contact-details p {
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+
+    .contact-details a {
+      color: #2A9D8F;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-details i {
+      margin-right: 8px;
+      color: #F4A261;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      padding: 1.5rem;
+      background: #F7F9FB;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h3 {
+      margin-bottom: 1rem;
+      color: #264653;
+      font-weight: 600;
+    }
+
+    .contact-form label {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      resize: none;
+    }
+
+    .contact-form button {
+      background: #2A9D8F;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .contact-form button:hover {
+      background: #E9C46A;
+    }
+
+    /* Google Map Embed */
+    .map-container {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .map-container iframe {
+      border: 0;
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2A9D8F;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gourmet Bistro</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact" class="contact-section">
+      <div class="contact-header">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you! Feel free to reach out to us using the details or form below.</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-details">
+          <h3><i class="fas fa-map-marker-alt"></i> Our Address</h3>
+          <p>1234 Food Street, Culinary City, FL 56789</p>
+          <h3><i class="fas fa-phone"></i> Phone</h3>
+          <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          <h3><i class="fas fa-envelope"></i> Email</h3>
+          <p><a href="mailto:info@gourmetbistro.com">info@gourmetbistro.com</a></p>
+        </div>
+
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form action="submit-form.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093744!2d-122.4194151846814!3d37.774929779759735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c031b1e57%3A0xabc1cd9b68a9b57e!2sCivic%20Center!5e0!3m2!1sen!2sus!4v1641012167982!5m2!1sen!2sus"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gourmet Bistro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

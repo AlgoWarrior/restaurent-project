@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #f4a261;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 3rem 2rem;
+      background: #fff;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .about-header h2 {
+      color: #444;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-header p {
+      color: #666;
+      font-size: 1.2rem;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .about-card {
+      flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .about-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .about-card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .about-card-content h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .about-card-content p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    /* Philosophy Section */
+    .about-philosophy {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: linear-gradient(to right, #f4a261, #e76f51);
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .about-philosophy h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-philosophy p {
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gourmet Bistro</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-header">
+        <h2>About Us</h2>
+        <p>At Gourmet Bistro, we believe food is not just food; it is art. Join us on a culinary journey like no other.</p>
+      </div>
+
+      <div class="about-container">
+        <!-- Card 1 -->
+        <div class="about-card">
+          <img src="https://via.placeholder.com/400x200" alt="Our Story">
+          <div class="about-card-content">
+            <h3>Our Story</h3>
+            <p>From humble beginnings to a gourmet paradise, our story reflects a passion for culinary excellence.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="about-card">
+          <img src="https://via.placeholder.com/400x200" alt="Our Ingredients">
+          <div class="about-card-content">
+            <h3>Fresh Ingredients</h3>
+            <p>We source only the finest and freshest ingredients to create dishes that inspire and delight.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="about-card">
+          <img src="https://via.placeholder.com/400x200" alt="Our Chefs">
+          <div class="about-card-content">
+            <h3>Our Chefs</h3>
+            <p>Our team of talented chefs transforms ingredients into works of art, creating unforgettable experiences.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy Section -->
+      <div class="about-philosophy">
+        <h3>Our Philosophy</h3>
+        <p>Food is not just sustenance. It is an experience, an emotion, and a story brought to life on a plate.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gourmet Bistro. All rights reserved.</p>
+  </footer>
+</body>
+</html>

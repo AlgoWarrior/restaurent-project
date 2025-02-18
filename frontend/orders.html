@@ -1,0 +1,233 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      background: #000000;
+      color: #ffffff;
+      padding: 1rem;
+    }
+
+    header {
+      background: #f4f4f4;
+      color: #333333;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+      margin: 2rem auto;
+      max-width: 800px;
+      padding: 1rem;
+      background: #333333;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #f4a261;
+      font-size: 2rem;
+    }
+
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    select, input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #f4a261;
+      border-radius: 5px;
+      background: #222222;
+      color: #ffffff;
+    }
+
+    select option {
+      background: #333333;
+      color: #ffffff;
+    }
+
+    .order-summary {
+      background: #222222;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #f4a261;
+      margin-top: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #f4a261;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e76f51;
+    }
+
+    .map-container {
+      margin-top: 2rem;
+      background: #444444;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .payment-section {
+      background: #222222;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    .payment-section h3 {
+      color: #f4a261;
+      margin-bottom: 1rem;
+    }
+
+    .payment-section input {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Place Your Order
+</header>
+
+<main>
+  <h2>Order Details</h2>
+  <form class="order-form">
+    <label for="menu-item">Select Menu Item:</label>
+    <select id="menu-item" required>
+      <option value="">--Select an item--</option>
+      <option value="caesar-salad">Caesar Salad - $7.49</option>
+      <option value="bruschetta">Bruschetta - $8.99</option>
+      <option value="pasta-primavera">Pasta Primavera - $9.99</option>
+      <option value="classic-burger">Classic Burger - $10.49</option>
+      <option value="tomato-soup">Tomato Soup - $6.99</option>
+      <option value="grilled-steak">Grilled Steak - $18.99</option>
+      <option value="margherita-pizza">Margherita Pizza - $12.49</option>
+      <option value="sushi-platter">Sushi Platter - $14.99</option>
+      <option value="chocolate-cake">Chocolate Cake - $5.99</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" min="1" value="1" required>
+
+    <label for="special-request">Special Requests (Optional):</label>
+    <textarea id="special-request" rows="4"></textarea>
+
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-item">
+        <span>Item:</span>
+        <span id="summary-item">None</span>
+      </div>
+      <div class="summary-item">
+        <span>Quantity:</span>
+        <span id="summary-quantity">0</span>
+      </div>
+      <div class="summary-item">
+        <span>Price:</span>
+        <span id="summary-price">$0.00</span>
+      </div>
+      <div class="total">Total: <span id="summary-total">$0.00</span></div>
+    </div>
+
+    <div class="payment-section">
+      <h3>Payment Details</h3>
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" placeholder="Enter your card number" required>
+
+      <label for="expiry-date">Expiry Date:</label>
+      <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" placeholder="Enter CVV" required>
+    </div>
+
+    <button type="submit">Place Order & Pay</button>
+  </form>
+
+  <div class="map-container">
+    <h3>Locate Us</h3>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093744!2d144.95373561584448!3d-37.81720974202186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577b68b5c7a4a8!2sVictoria%20State%20Library!5e0!3m2!1sen!2sau!4v1616108099136!5m2!1sen!2sau"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</main>
+
+<script>
+  const menuItem = document.getElementById('menu-item');
+  const quantity = document.getElementById('quantity');
+  const summaryItem = document.getElementById('summary-item');
+  const summaryQuantity = document.getElementById('summary-quantity');
+  const summaryPrice = document.getElementById('summary-price');
+  const summaryTotal = document.getElementById('summary-total');
+
+  function updateSummary() {
+    const selectedItem = menuItem.options[menuItem.selectedIndex];
+    const itemPrice = parseFloat(selectedItem.text.split('$')[1]) || 0;
+    const itemQuantity = parseInt(quantity.value) || 0;
+
+    summaryItem.textContent = selectedItem.text.split(' - ')[0];
+    summaryQuantity.textContent = itemQuantity;
+    summaryPrice.textContent = `$${itemPrice.toFixed(2)}`;
+    summaryTotal.textContent = `$${(itemPrice * itemQuantity).toFixed(2)}`;
+  }
+
+  menuItem.addEventListener('change', updateSummary);
+  quantity.addEventListener('input', updateSummary);
+</script>
+
+</body>
+</html>

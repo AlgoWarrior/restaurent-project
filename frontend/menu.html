@@ -1,0 +1,385 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text */
+}
+header {
+  background: #000000; /* Black background for header */
+  color: #ffffff; /* White text */
+  box-shadow: 0 4px 10px rgba(255, 111, 0, 0.4); /* Orange shadow for effect */
+}
+
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+  color: #ffffff; /* White navigation links */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #FF6F00; /* Orange on hover */
+}
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #333333; /* Dark color for menu toggle */
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Menu Sections */
+    main {
+      padding: 3rem 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #333333; /* Dark color for section titles */
+      text-align: center;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Card Style */
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .food-card {
+  background: #1c1c1c; /* Dark gray for card background */
+  border: 2px solid #Ffffff; /* Orange border */
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 111, 0, 0.5); /* Soft orange shadow */
+}
+
+    .food-image-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 1.5rem;
+    }
+
+    .food-info h3 {
+  margin-bottom: 0.5rem;
+  color: #FFffff; /* Orange for dish names */
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+}
+
+.food-info p {
+  margin-bottom: 0.8rem;
+  color: #b3b3b3; /* Light gray for descriptions */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.food-info .price {
+  font-weight: bold;
+  color: #FF6F00; /* Price color as orange */
+  font-size: 1.2rem;
+}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .upper-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+      }
+
+      .upper-nav .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Upper Navbar -->
+  <header class="upper-nav">
+    <nav class="navbar">
+      <div class="logo">Gourmet Bistro</div>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="menu">
+      <h2>Menu</h2>
+      <div class="menu-container">
+        <!-- First Card -->
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-319px);">
+              <img src="image/Caesar Salad1.jpg" alt="Caesar Salad 1">
+              <img src="image/Caesar Salad2.jpg" alt="Caesar Salad 2">
+              <img src="image/Caesar Salad3.jpg" alt="Caesar Salad 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Caesar Salad</h3>
+            <p>Crispy romaine lettuce with Caesar dressing and croutons.</p>
+            <span class="price">$7.49</span>
+            <button class="order-button">order</button>
+            <div id="aviability">out of stock</div>
+          </div>
+        </div>
+
+        <!-- Second Card -->
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-68px);">
+              <img src="image/Bruschetta1.jpg" alt="Bruschetta 1">
+              <img src="image/Bruschetta2.jpg" alt="Bruschetta 2">
+              <img src="image/Bruschetta3.jpg" alt="Bruschetta 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Bruschetta</h3>
+            <p>Grilled bread topped with fresh tomatoes, garlic, and basil.</p>
+            <span class="price">$8.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <!-- Additional Cards -->
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-300px);">
+              <img src="image/Pasta1.jpg" alt="Pasta 1">
+              <img src="image/Pasta2.jpg" alt="Pasta 2">
+              <img src="image/Pasta3.jpg" alt="Pasta 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Pasta Primavera</h3>
+            <p>Fresh vegetables tossed with penne pasta in a light garlic sauce.</p>
+            <span class="price">$9.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-403px);">
+              <img src="image/Burger1.jpg" alt="Burger 1">
+              <img src="image/Burger2.jpg" alt="Burger 2">
+              <img src="image/Burger3.jpg" alt="Burger 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Classic Burger</h3>
+            <p>Juicy beef patty served with lettuce, tomato, and cheese on a sesame bun.</p>
+            <span class="price">$10.49</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-300px);">
+              <img src="image/Soup1.jpg" alt="Soup 1">
+              <img src="image/Soup2.jpg" alt="Soup 2">
+              <img src="image/Soup3.jpg" alt="Soup 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Tomato Soup</h3>
+            <p>Rich and creamy tomato soup garnished with basil and croutons.</p>
+            <span class="price">$6.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-267px);">
+              <img src="image/Steak1.jpg" alt="Steak 1">
+              <img src="image/Steak2.jpg" alt="Steak 2">
+              <img src="image/Steak3.jpg" alt="Steak 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Grilled Steak</h3>
+            <p>Perfectly grilled steak served with a side of vegetables.</p>
+            <span class="price">$18.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-301px);">
+              <img src="image/Pizza1.jpg" alt="Pizza 1">
+              <img src="image/Pizza2.jpg" alt="Pizza 2">
+              <img src="image/Pizza3.jpg" alt="Pizza 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Margherita Pizza</h3>
+            <p>Classic Margherita pizza with fresh basil, mozzarella, and tomato sauce.</p>
+            <span class="price">$12.49</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-357px);">
+              <img src="image/Sushi1.jpg" alt="Sushi 1">
+              <img src="image/Sushi2.jpg" alt="Sushi 2">
+              <img src="image/Sushi3.jpg" alt="Sushi 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Sushi Platter</h3>
+            <p>Assorted sushi rolls served with wasabi and soy sauce.</p>
+            <span class="price">$14.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-image-container">
+            <div class="slides" style="transform: translateX(-134px);">
+              <img src="image/Dessert1.jpg" alt="Dessert 1">
+              <img src="image/Dessert2.jpg" alt="Dessert 2">
+              <img src="image/Dessert3.jpg" alt="Dessert 3">
+            </div>
+          </div>
+          <div class="food-info">
+            <h3>Chocolate Cake</h3>
+            <p>Rich chocolate cake with a creamy chocolate ganache.</p>
+            <span class="price">$5.99</span>
+            <button class="order-button">order</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .order-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #FF6F00; /* Orange button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #ec5800; /* Darker orange on hover */
+}
+   
+   #aviability{
+    color: #3b3535;
+   }
+   </style>#
+  </main>
+
+  <script>
+    const cards = document.querySelectorAll('.food-card');
+
+    cards.forEach((card) => {
+      const slides = card.querySelector('.slides');
+      const images = slides.querySelectorAll('img');
+      let currentIndex = 0;
+
+      card.addEventListener('mouseenter', () => {
+        const interval = setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length;
+          const slideWidth = images[0].clientWidth;
+          slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }, 1500);
+
+        card.addEventListener('mouseleave', () => {
+          clearInterval(interval);
+          slides.style.transform = `translateX(0)`; // Reset to the first image
+        });
+      });
+    });
+  </script>
+
+
+
+
+</body></html>

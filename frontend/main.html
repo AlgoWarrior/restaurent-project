@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Bistro - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f4a261;
+            --secondary-color: #ffffff;
+            --background-color: #000;
+            --font-primary: 'Playfair Display', serif;
+            --font-secondary: 'Roboto', sans-serif;
+        }
+
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            color: var(--secondary-color);
+            background: var(--background-color);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header/Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+        }
+
+        /* Full-Page Layout */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .text-content {
+            padding: 2rem;
+            z-index: 2;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-content h1 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #000;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e76f51;
+        }
+
+        .hero-image {
+            width: 50%;
+            height: 100%;
+            background: url('image/pexels-catscoming-1907227.png') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            filter: brightness(0.9);
+        }
+
+        /* Enhanced Typewriter Effect */
+        .typewriter-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .typewriter {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--primary-color);
+            width: 0;
+            animation: typing 3s steps(30) forwards, blink 0.5s step-end infinite;
+        }
+
+        .typewriter.hidden {
+            display: none;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary-color); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .text-content {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="logo">Gourmet Bistro</div>
+        <ul class="nav-links">
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="orders.html">Order</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="text-content">
+            <h1>Cooking is an Art</h1>
+            <div class="typewriter-container">
+                <div class="typewriter" id="typewriter1">Perfect Ingredients. Endless Creativity.</div>
+                <div class="typewriter hidden" id="typewriter2">Over 24 Million Recipes.</div>
+                <div class="typewriter hidden" id="typewriter3">With 100 Best Chefs.</div>
+            </div>
+            <p>Experience the artistry of cooking with Gourmet Bistro. Every dish is crafted to perfection, blending flavors and techniques that tantalize your senses.</p>
+            <button class="btn">Explore Menu</button>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cycle through typewriter messages
+        const typewriterElements = document.querySelectorAll('.typewriter');
+        let currentMessageIndex = 0;
+
+        function showNextMessage() {
+            typewriterElements.forEach(el => el.classList.add('hidden'));
+            const currentElement = typewriterElements[currentMessageIndex];
+            currentElement.classList.remove('hidden');
+            currentElement.style.animation = 'none'; // Reset animation
+            setTimeout(() => {
+                currentElement.style.animation = ''; // Restart animation
+            }, 10);
+            currentMessageIndex = (currentMessageIndex + 1) % typewriterElements.length;
+        }
+
+        setInterval(showNextMessage, 4000); // Switch every 4 seconds
+    </script>
+</body>
+</html>

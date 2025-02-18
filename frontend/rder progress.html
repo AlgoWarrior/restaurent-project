@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Card with Slideshow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
+      padding: 3rem;
+    }
+
+    /* Food Card */
+    .food-card {
+      width: 300px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .food-image-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .food-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .food-info {
+      padding: 1rem;
+    }
+
+    .food-info h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .food-info p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Slideshow */
+    .slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Navigation buttons (Optional) */
+    .nav-btns {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .nav-btns button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    .nav-btns button:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Food Card -->
+  <div class="food-card">
+    <div class="food-image-container">
+      <div class="slides">
+        <img src="image/Grilled Salmon.jpg" alt="Food Image 1">
+        <img src="image/Espresso.jpg" alt="Food Image 2">
+        <img src="image/Caesar Salad.jpg" alt="Food Image 3">
+        <img src="image/Cheesecake2.jpg" alt="Food Image 4">
+        <img src="image/Steak Frites2.jpg" alt="Food Image 5">
+      </div>
+    </div>
+    <div class="food-info">
+      <h3>Delicious Pasta</h3>
+      <p>Our signature pasta made with the freshest ingredients. Try it today!</p>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slides img');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      const slideWidth = slides[0].clientWidth;
+      document.querySelector('.slides').style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    // Automatically change slides every 5 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides; // Loop back to first image
+      showSlide(currentIndex);
+    }, 5000); // 5000 milliseconds = 5 seconds
+  </script>
+
+</body>
+</html>
